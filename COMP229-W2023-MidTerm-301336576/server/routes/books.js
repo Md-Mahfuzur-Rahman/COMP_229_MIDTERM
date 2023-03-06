@@ -36,6 +36,7 @@ router.get('/add', (req, res, next) => {
 
 });
 
+// mahfuz: content of this method was missing 
 // POST process the Book Details page and create a new Book - CREATE
 router.post('/add', (req, res, next) => {
 
@@ -44,20 +45,22 @@ router.post('/add', (req, res, next) => {
       "Price": req.body.price,
       "Author": req.body.author,
       "Genre": req.body.genre
-}); 
-book.create(newBooks,(err,book)=> {
-   if(err){
-       console.log(err);
-       res.end(err);
-   }
-   else{
-       //refresh the book list
-       res.redirect('/books');
-   }
-  });
+    }); 
+
+    book.create(newBooks,(err,book)=> {
+      if(err){
+          console.log(err);
+          res.end(err);
+      }
+      else{
+          //refresh the book list
+          res.redirect('/books');
+      }
+      });
 
 });
 
+// mahfuz: content of this method was missing 
 // GET the Book Details page in order to edit an existing Book
 router.get('/edit/:id', (req, res, next) => {
     
@@ -79,6 +82,7 @@ router.get('/edit/:id', (req, res, next) => {
 
 });
 
+// mahfuz: content of this method was missing 
 // POST - process the information passed from the details form and update the document
 router.post('/edit/:id', (req, res, next) => {
  
@@ -104,6 +108,8 @@ router.post('/edit/:id', (req, res, next) => {
      });
 });
 
+
+// mahfuz: content of this method was missing 
 // GET - process the delete by user id
 router.get('/delete/:id', (req, res, next) => {
 
